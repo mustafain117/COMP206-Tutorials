@@ -21,6 +21,7 @@ int main(){
 
     for(int i = 0 ; i < newAccounts ; i++){
         printf("Enter account type: ");
+        //Note the space before %c
         scanf(" %c", &(accounts+nextSpot)->type);
         printf("Enter account balance: ");
         scanf("%lf", &(accounts+nextSpot)->balance);
@@ -35,9 +36,10 @@ int main(){
         printf("******* Account Created **********\n");
         nextSpot++;
     }
+    
     printf("******* Accounts Record **********\n");
     for(int i = 0 ; i < nextSpot; i++){
-        if((accounts+nextSpot)->type =='S'){
+        if((accounts+i)->type =='S'){
             printf("Account number : %d : type: %c, balance: %f, charge: %f\n", i+1 ,(accounts+i)->type, (accounts+i)->balance, (accounts+i)->specific.charge);
         }else{
             printf("Account number : %d : type: %c, balance: %f, credit_Score: %d\n", i+1 ,(accounts+i)->type, (accounts+i)->balance, (accounts+i)->specific.credit_score);

@@ -15,11 +15,14 @@ int main(){
     int nextSpot = 0;
     int newAccounts = 0; 
 
+    //Prompt for number of accounts and store in newAccounts
     printf("Enter number of new accounts : ");
     scanf("%d", &newAccounts);
 
     for(int i = 0 ; i < newAccounts ; i++){
+        //Prompt for account details and store in struct
         printf("Enter account type: ");
+        //Note the space before %c
         scanf(" %c", &accounts[nextSpot].type);
         printf("Enter account balance: ");
         scanf("%lf", &accounts[nextSpot].balance);
@@ -35,6 +38,7 @@ int main(){
         nextSpot++;
     }
 
+    //Print all created accounts
     printf("******* Accounts Record **********\n");
     for(int i = 0 ; i < nextSpot; i++){
         if(accounts[i].type =='S'){
